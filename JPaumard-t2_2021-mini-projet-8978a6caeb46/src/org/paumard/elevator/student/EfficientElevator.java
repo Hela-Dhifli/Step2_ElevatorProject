@@ -95,7 +95,7 @@ public class EfficientElevator implements Elevator {
 		 }
 	}
 
-    	//retourne etage et dest de la personne qui a attendu le plus
+    	
 	private List<Integer> destinationsToPickUpAngryPeople() {
 		
 		for (int indexFloor = 0 ; indexFloor < Building.MAX_FLOOR ; indexFloor++) {
@@ -114,7 +114,6 @@ public class EfficientElevator implements Elevator {
 		return List.of();
 	}
 
-		//renvoit la liste des destinationFloor des gens de l'etage dans lequel je suis
 	private List<Integer> findDestinationFloors(List<Person> waitingListForCurrentFloor) {
 		return waitingListForCurrentFloor.stream()
 			.map(person -> person.getDestinationFloor())
@@ -123,7 +122,7 @@ public class EfficientElevator implements Elevator {
 			.collect(Collectors.toList());
 	}
 
-		//retourne l'etage ou il y a quelqu'un
+		
 	private List<Integer> findNonEmptyFloor() {
 		for (int indexFloor = 0 ; indexFloor < Building.MAX_FLOOR ; indexFloor++) {
 			if (!peopleByFloor.get(indexFloor).isEmpty()) {
